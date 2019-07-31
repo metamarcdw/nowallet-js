@@ -2,11 +2,13 @@
   "name": "nowallet",
   "version": "0.1.0",
   "private": true,
+  "main": "public/electron.js",
   "scripts": {
     "start": "./node_modules/.bin/react-native start",
     "start-clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm start -- --reset-cache",
     "android": "./node_modules/.bin/react-native run-android",
     "ios": "./node_modules/.bin/react-native run-ios",
+    "electron-dev": "concurrently --kill-others \"export BROWSER=none && npm run web\" \"wait-on http://localhost:3000 && electron .\"",
     "web": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "npm run test:web && npm run test:native",
