@@ -2,6 +2,7 @@
   "name": "nowallet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "main": "public/electron.js",
   "scripts": {
     "start": "./node_modules/.bin/react-native start",
@@ -11,6 +12,9 @@
     "electron-dev": "concurrently --kill-others \"export BROWSER=none && npm run web\" \"wait-on http://localhost:3000 && electron .\"",
     "web": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder -mw -l deb",
     "test": "npm run test:web && npm run test:native",
     "test:web-watch": "node scripts/test.js --watch --config \"./config/web.jest.config.js\"",
     "test:web": "node scripts/test.js --config \"./config/web.jest.config.js\"",
@@ -92,5 +96,26 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "author": {
+    "name": "metamarcdw",
+    "email": "marcdcw87@gmail.com",
+    "url": "https://nowallet.org"
+  },
+  "build": {
+    "appId": "com.nowallet.nowallet",
+    "productName": "Nowallet",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "./public/electron.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
 }

@@ -23,5 +23,6 @@ DerivedData
 
 # node.js
 #
+dist/
 node_modules/
 npm-debug.log
