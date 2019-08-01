@@ -16,4 +16,7 @@ build_script:
   - cmd: npm run build
   - cmd: npx electron-builder -w
 
+artifacts:
+  - path: dist\Nowallet*.exe
+
 test: off
