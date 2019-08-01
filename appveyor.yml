@@ -13,8 +13,7 @@ install:
   - cmd: npm install
 
 build_script:
-  - sh: >-
-    npm run build
-    npx electron-builder -w
+  - cmd: npm run build
+  - cmd: npx electron-builder -w
 
 test: off
