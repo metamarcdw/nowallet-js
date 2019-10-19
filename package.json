@@ -10,6 +10,7 @@
     "android": "./node_modules/.bin/react-native run-android",
     "ios": "./node_modules/.bin/react-native run-ios",
     "electron-dev": "concurrently --kill-others \"export BROWSER=none && npm run web\" \"wait-on http://localhost:3000 && electron .\"",
+    "hack-sandbox": "sudo sysctl kernel.unprivileged_userns_clone=1",
     "web": "node scripts/start.js",
     "build": "node scripts/build.js",
     "postinstall": "electron-builder install-app-deps",
@@ -30,6 +31,8 @@
     "react-art": "^16.6.x",
     "react-dom": "^16.6.x",
     "react-native": "^0.60.4",
+    "react-native-elements": "^1.1.0",
+    "react-native-vector-icons": "^6.6.0",
     "react-native-web": "^0.10.x"
   },
   "devDependencies": {

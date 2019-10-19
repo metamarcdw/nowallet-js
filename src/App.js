@@ -8,6 +8,7 @@ import {
   Animated,
   Easing
 } from 'react-native';
+// import { Button } from 'react-native-elements';
 import logo from './logo.png';
 
 class App extends Component {
@@ -42,6 +43,14 @@ class App extends Component {
         {Platform.OS !== 'web' && (
           <Text>Shake your phone to open the developer menu.</Text>
         )}
+        {/* <Button
+          icon={{
+            name: "btc",
+            size: 15,
+            color: "white"
+          }}
+          title="Bitcoin"
+        /> */}
         <TouchableHighlight
           onPress={this.onClick}
           style={styles.button}

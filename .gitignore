@@ -25,4 +25,6 @@ DerivedData
 #
 dist/
 node_modules/
+android/
+ios/
 npm-debug.log
